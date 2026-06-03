@@ -98,7 +98,7 @@ transform:scale(1.08);
 }
 
 .envelope{
-font-size:140px;
+width:220px;
 cursor:pointer;
 animation:float 2s ease-in-out infinite;
 }
@@ -205,54 +205,17 @@ transform:translateY(100vh);
 opacity:0;
 }
 }
-.envelope-real{
-position:relative;
-width:220px;
-height:140px;
-cursor:pointer;
-animation:float 2.5s ease-in-out infinite;
-}
 
-.envelope-real::before{
-content:'';
-position:absolute;
-bottom:0;
-width:220px;
-height:140px;
-background:#4a0d0d;
-border-radius:8px;
-}
-
-.flap{
-position:absolute;
-top:0;
-left:0;
-width:0;
-height:0;
-border-left:110px solid transparent;
-border-right:110px solid transparent;
-border-top:80px solid #2b0000;
-z-index:3;
-}
-
-.letter{
-position:absolute;
-width:170px;
-height:100px;
-background:#f7f1f1;
-left:25px;
-top:20px;
-border-radius:5px;
-}
 </style>
 </head>
 <body>
   <!-- PAGE 1 -->
 
-<div class="envelope-real" onclick="nextPage(2)">
-<div class="flap"></div>
-<div class="letter"></div>
-</div>
+<img
+class="envelope"
+onclick="nextPage(2)"
+src="https://cdn-icons-png.flaticon.com/512/2099/2099199.png"
+/>
 
 </div>
 
