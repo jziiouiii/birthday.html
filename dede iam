@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Sayang</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:linear-gradient(180deg,#180808,#4b1111,#120707);font-family:Poppins,sans-serif;color:#fff;text-align:center}
+.page{min-height:100vh;display:none;padding:30px 20px;justify-content:center;align-items:center;flex-direction:column}
+.active{display:flex}
+.card{background:rgba(255,255,255,.08);padding:28px;border-radius:24px;max-width:420px;backdrop-filter:blur(10px)}
+h1{font-family:Pacifico,cursive;color:#ffd4d4;font-size:42px}
+.btn{background:#7a1f1f;color:#fff;border:none;padding:12px 24px;border-radius:999px;cursor:pointer;margin-top:18px}
+img.photo{max-width:320px;width:90%;border-radius:20px;box-shadow:0 0 25px rgba(0,0,0,.4)}
+.envelope{font-size:120px;cursor:pointer}
+.cat{font-size:90px;cursor:pointer}
+.confetti{position:fixed;top:-20px;font-size:24px;animation:fall 3s linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg);opacity:0}}
+</style>
+</head>
+<body>
+
+<div id="p1" class="page active">
+<div class="card">
+<div class="envelope" onclick="go('p2')">💌</div>
+<p>tap the envelope</p>
+</div>
+</div>
+
+<div id="p2" class="page">
+<div class="card">
+<h1>Happy Birthday Sayang 💗</h1>
+<p>4 Juni 2026</p>
+<p>semoga semua hal baik selalu dateng ke kamu dan semoga kita bisa terus bareng yang lamaa 🫶<br><br>makasih yaa udah selalu ada dan jadi rumah paling nyaman buat aku.</p>
+<button class="btn" onclick="go('p3')">Pencet Aku</button>
+</div>
+</div>
+
+<div id="p3" class="page">
+<img class="photo" src="photo.png">
+<button class="btn" onclick="showCard()">Pencet Lagi</button>
+</div>
+
+<div id="p4" class="page">
+<img class="photo" src="license.png">
+<h2>🎂🎈🎉 Happy Birthday 🎉🎈🎂</h2>
+<div class="cat" onclick="go('p5')">🐱</div>
+<p>klik kucingnyaa</p>
+</div>
+
+<div id="p5" class="page">
+<img class="photo" src="emuach.jpg">
+  <img class="photo" src="bunga.jpg">
+<button class="btn" onclick="go('p6')">Lanjut</button>
+</div>
+
+<div id="p6" class="page">
+<img class="photo" src="aku.jpg">
+<h2>💗 hadiahnya aku aja yaa 💗</h2>
+</div>
+
+<script>
+function go(id){
+document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+window.scrollTo(0,0);
+}
+function showCard(){
+for(let i=0;i<40;i++){
+let c=document.createElement('div');
+c.className='confetti';
+c.innerHTML=['🎉','🎈','✨','💗'][Math.floor(Math.random()*4)];
+c.style.left=Math.random()*100+'vw';
+document.body.appendChild(c);
+setTimeout(()=>c.remove(),3000);
+}
+go('p4');
+}
+</script>
+</body>
+</html>
