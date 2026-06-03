@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Happy Birthday Sayang ❤️</title>
+<title>Happy Birthday Sayang</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet">
 
 <style>
 
@@ -14,25 +14,24 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Poppins',sans-serif;
 }
 
 body{
-background:linear-gradient(180deg,#180808,#3b0d0d,#5a1010);
-overflow:hidden;
+font-family:'Poppins',sans-serif;
+background:linear-gradient(180deg,#140505,#2b0000,#4a0d0d);
 color:white;
-height:100vh;
+overflow-x:hidden;
+min-height:100vh;
 }
 
 .page{
-position:absolute;
-width:100%;
-height:100%;
+min-height:100vh;
 display:none;
 justify-content:center;
 align-items:center;
 flex-direction:column;
-padding:20px;
+padding:30px 20px;
+text-align:center;
 animation:fade .8s ease;
 }
 
@@ -55,52 +54,51 @@ transform:translateY(0);
 background:rgba(255,255,255,.08);
 backdrop-filter:blur(10px);
 padding:30px;
-border-radius:30px;
-max-width:700px;
+border-radius:28px;
+max-width:800px;
 width:95%;
-text-align:center;
-box-shadow:0 0 25px rgba(0,0,0,.4);
+box-shadow:0 10px 30px rgba(0,0,0,.35);
 }
 
 h1{
-font-family:'Great Vibes',cursive;
-font-size:70px;
+font-size:52px;
+font-family:'Cormorant Garamond',serif;
 margin-bottom:10px;
-color:#fff;
 }
 
 .date{
-font-size:22px;
-letter-spacing:4px;
+color:#e2cfcf;
 margin-bottom:20px;
-color:#ffb6b6;
-}
-
-p{
-line-height:1.8;
-font-size:18px;
+letter-spacing:3px;
 }
 
 .btn{
 margin-top:25px;
-padding:14px 30px;
+padding:14px 28px;
 border:none;
 border-radius:999px;
-background:#8d1d1d;
+background:#651111;
 color:white;
-font-size:16px;
 cursor:pointer;
+font-size:16px;
 transition:.3s;
 }
 
 .btn:hover{
-transform:scale(1.08);
+transform:scale(1.05);
 }
 
 .envelope{
 width:220px;
 cursor:pointer;
-animation:float 2s ease-in-out infinite;
+animation:float 2.5s ease-in-out infinite;
+}
+
+.tap{
+margin-top:15px;
+opacity:.8;
+font-size:14px;
+letter-spacing:2px;
 }
 
 @keyframes float{
@@ -108,21 +106,22 @@ animation:float 2s ease-in-out infinite;
 transform:translateY(0);
 }
 50%{
-transform:translateY(-15px);
+transform:translateY(-12px);
 }
 }
 
 .photo{
-width:90%;
-max-width:700px;
-border-radius:25px;
-box-shadow:0 0 25px rgba(0,0,0,.5);
+width:95%;
+max-width:750px;
+border-radius:22px;
+box-shadow:0 0 25px rgba(0,0,0,.4);
 }
 
 .kartu{
-width:90%;
-max-width:750px;
+width:95%;
+max-width:700px;
 border-radius:20px;
+box-shadow:0 0 25px rgba(0,0,0,.35);
 }
 
 .duo{
@@ -138,71 +137,48 @@ max-width:90%;
 border-radius:20px;
 }
 
-.kucing{
-font-size:90px;
-cursor:pointer;
-animation:bounce 1.5s infinite;
-margin-top:20px;
-}
-
-@keyframes bounce{
-50%{
-transform:translateY(-15px);
-}
-}
-
 .final-photo{
 width:350px;
 max-width:90%;
 border-radius:25px;
-box-shadow:0 0 30px rgba(255,255,255,.2);
 margin-bottom:20px;
+box-shadow:0 0 30px rgba(0,0,0,.35);
 }
 
 .final-text{
 font-family:'Cormorant Garamond',serif;
-font-size:44px;
-font-weight:600;
-letter-spacing:1px;
-color:#f3eaea;
+font-size:42px;
+margin-top:10px;
+}
+
+.kucing{
+font-size:80px;
+cursor:pointer;
+margin-top:20px;
+animation:bounce 1.5s infinite;
+}
+
+@keyframes bounce{
+50%{
+transform:translateY(-10px);
+}
 }
 
 .floating{
-position:absolute;
-font-size:34px;
-opacity:.4;
+position:fixed;
+bottom:-50px;
+font-size:24px;
+opacity:.35;
 pointer-events:none;
-}
-animation:rise linear infinite;
-opacity:.5;
+animation:rise linear forwards;
 }
 
 @keyframes rise{
 from{
-transform:translateY(100vh);
-opacity:0;
+transform:translateY(0);
 }
 to{
-transform:translateY(-120px);
-opacity:1;
-}
-}
-
-.love-rain{
-position:absolute;
-font-size:35px;
-animation:drop 4s linear forwards;
-pointer-events:none;
-}
-
-@keyframes drop{
-from{
-transform:translateY(-100px);
-opacity:1;
-}
-to{
-transform:translateY(100vh);
-opacity:0;
+transform:translateY(-120vh);
 }
 }
 
@@ -211,11 +187,17 @@ opacity:0;
 <body>
   <!-- PAGE 1 -->
 
+<div class="page active" id="page1">
+
 <img
 class="envelope"
 onclick="nextPage(2)"
 src="https://cdn-icons-png.flaticon.com/512/2099/2099199.png"
-/>
+>
+
+<div class="tap">
+tap the envelope
+</div>
 
 </div>
 
@@ -228,7 +210,7 @@ src="https://cdn-icons-png.flaticon.com/512/2099/2099199.png"
 <h1>Happy Birthday Sayang</h1>
 
 <div class="date">
-04 JUNI 2026
+04 JUNI 2004
 </div>
 
 <p>
@@ -238,7 +220,7 @@ makasih yaa udah selalu ada dan jadi rumah paling nyaman buat aku.
 </p>
 
 <button class="btn" onclick="nextPage(3)">
-Pencet Aku 
+Pencet Aku
 </button>
 
 </div>
@@ -252,7 +234,7 @@ Pencet Aku
 <img src="photo.png" class="photo">
 
 <button class="btn" onclick="nextPage(4)">
-Pencet Lagi ✨
+Pencet Lagi
 </button>
 
 </div>
@@ -286,7 +268,7 @@ klik kucingnyaa
 </div>
 
 <button class="btn" onclick="nextPage(6)">
-Terakhir Nih 💌
+Terakhir Nih
 </button>
 
 </div>
@@ -298,7 +280,7 @@ Terakhir Nih 💌
 <img src="aku.jpg" class="final-photo">
 
 <div class="final-text">
-hadiahnya aku aja mau ga seng? ❤️
+hadiahnya aku aja mau ga seng?
 </div>
 
 <button class="btn" onclick="loveExplosion()">
@@ -316,55 +298,62 @@ p.classList.remove("active");
 
 document.getElementById("page"+page).classList.add("active");
 
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
 }
 
 function createFloating(){
 
-const items=["🖤","❤️","✨","🎈"];
+const icons=["🖤","🤎","✦"];
 
-let el=document.createElement("div");
+const item=document.createElement("div");
 
-el.className="floating";
+item.className="floating";
 
-el.innerHTML=items[Math.floor(Math.random()*items.length)];
+item.innerHTML=icons[Math.floor(Math.random()*icons.length)];
 
-el.style.left=Math.random()*100+"vw";
+item.style.left=Math.random()*100+"vw";
 
-el.style.animationDuration=(Math.random()*5+6)+"s";
+item.style.animationDuration=(Math.random()*6+8)+"s";
 
-document.body.appendChild(el);
+item.style.fontSize=(Math.random()*20+18)+"px";
+
+document.body.appendChild(item);
 
 setTimeout(()=>{
-el.remove();
-},11000);
+item.remove();
+},15000);
 
 }
 
-setInterval(createFloating,700);
+setInterval(createFloating,800);
 
 function loveExplosion(){
 
-const items=["🖤","🤎","✨","🐱","🎉"];
+const icons=["🖤","🤎","✦","🐱"];
 
-for(let i=0;i<80;i++){
+for(let i=0;i<60;i++){
 
-let love=document.createElement("div");
+const item=document.createElement("div");
 
-love.className="love-rain";
+item.className="floating";
 
-love.innerHTML=items[Math.floor(Math.random()*items.length)];
+item.innerHTML=icons[Math.floor(Math.random()*icons.length)];
 
-love.style.left=Math.random()*100+"vw";
+item.style.left=Math.random()*100+"vw";
 
-love.style.fontSize=(Math.random()*25+20)+"px";
+item.style.fontSize=(Math.random()*35+20)+"px";
 
-love.style.animationDuration=(Math.random()*2+2)+"s";
+item.style.animationDuration=(Math.random()*3+2)+"s";
 
-document.body.appendChild(love);
+document.body.appendChild(item);
 
 setTimeout(()=>{
-love.remove();
-},5000);
+item.remove();
+},6000);
 
 }
 
