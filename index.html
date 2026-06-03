@@ -6,7 +6,7 @@
 
 <title>Happy Birthday Sayang ❤️</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
@@ -160,13 +160,19 @@ margin-bottom:20px;
 }
 
 .final-text{
-font-size:40px;
-font-family:'Great Vibes',cursive;
+font-family:'Cormorant Garamond',serif;
+font-size:44px;
+font-weight:600;
+letter-spacing:1px;
+color:#f3eaea;
 }
 
 .floating{
 position:absolute;
-font-size:28px;
+font-size:34px;
+opacity:.4;
+pointer-events:none;
+}
 animation:rise linear infinite;
 opacity:.5;
 }
@@ -199,16 +205,53 @@ transform:translateY(100vh);
 opacity:0;
 }
 }
+.envelope-real{
+position:relative;
+width:220px;
+height:140px;
+cursor:pointer;
+animation:float 2.5s ease-in-out infinite;
+}
 
+.envelope-real::before{
+content:'';
+position:absolute;
+bottom:0;
+width:220px;
+height:140px;
+background:#4a0d0d;
+border-radius:8px;
+}
+
+.flap{
+position:absolute;
+top:0;
+left:0;
+width:0;
+height:0;
+border-left:110px solid transparent;
+border-right:110px solid transparent;
+border-top:80px solid #2b0000;
+z-index:3;
+}
+
+.letter{
+position:absolute;
+width:170px;
+height:100px;
+background:#f7f1f1;
+left:25px;
+top:20px;
+border-radius:5px;
+}
 </style>
 </head>
 <body>
   <!-- PAGE 1 -->
 
-<div class="page active" id="page1">
-
-<div class="envelope" onclick="nextPage(2)">
-💌
+<div class="envelope-real" onclick="nextPage(2)">
+<div class="flap"></div>
+<div class="letter"></div>
 </div>
 
 </div>
@@ -232,7 +275,7 @@ makasih yaa udah selalu ada dan jadi rumah paling nyaman buat aku.
 </p>
 
 <button class="btn" onclick="nextPage(3)">
-Pencet Aku 💗
+Pencet Aku 
 </button>
 
 </div>
@@ -292,11 +335,11 @@ Terakhir Nih 💌
 <img src="aku.jpg" class="final-photo">
 
 <div class="final-text">
-hadiahnya aku aja mau ga seng? 💗
+hadiahnya aku aja mau ga seng? ❤️
 </div>
 
 <button class="btn" onclick="loveExplosion()">
-Mau Banget 😭💗
+Mau Banget
 </button>
 
 </div>
@@ -338,7 +381,7 @@ setInterval(createFloating,700);
 
 function loveExplosion(){
 
-const items=["❤️","🖤","💗","✨","🐱","🎉"];
+const items=["🖤","🤎","✨","🐱","🎉"];
 
 for(let i=0;i<80;i++){
 
