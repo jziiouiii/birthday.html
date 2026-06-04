@@ -293,19 +293,12 @@ Mau Banget
 function nextPage(page){
 
 if(page===2){
-document.getElementById("bgMusic").play();
+
+const music=document.getElementById("bgMusic");
+
+if(music){
+music.play();
 }
-
-document.querySelectorAll(".page").forEach(p=>{
-p.classList.remove("active");
-});
-
-document.getElementById("page"+page).classList.add("active");
-
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
 
 }
 
